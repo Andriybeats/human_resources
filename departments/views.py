@@ -14,4 +14,3 @@ class DepartmentListView(generics.ListAPIView):
 class DepartmentDetailView(generics.RetrieveUpdateDestroyAPIView):
   serializer_class = DepartmentListSerializer
   queryset = Department.objects.all()
-
