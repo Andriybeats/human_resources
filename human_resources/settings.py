@@ -38,12 +38,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'rest_framework_swagger',
     'departments',
     'employees',
     'history',
     'positions',
     'vacations'
-]
+    ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -73,6 +74,10 @@ TEMPLATES = [
         },
     },
 ]
+
+REST_FRAMEWORK = {
+      'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema',
+}
 
 WSGI_APPLICATION = 'human_resources.wsgi.application'
 
