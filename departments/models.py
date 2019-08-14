@@ -1,7 +1,11 @@
 from django.db import models
+from departments.validators import *
+from django.core.validators import RegexValidator
 
-# Create your models here.
 
 class Department(models.Model):
-  name = models.CharField(max_length=20, unique=True)
-  abbreviation = models.CharField(max_length=3, unique=True)
+    name = models.CharField(max_length=20, unique=True, validators=[validate_only_letters])
+    abbreviation = models.CharField(max_length=3, unique=True)
+
+    def __str__(self):
+        return self.name
