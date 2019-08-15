@@ -15,6 +15,7 @@ class Employee(models.Model):
     start_work = models.DateField()
     department = models.ForeignKey(Department, on_delete=models.CASCADE)
     position = models.ForeignKey(Position, on_delete=models.CASCADE)
+    image = models.ImageField(upload_to='employee/images/', )
 
     def __str__(self):
         return self.name
